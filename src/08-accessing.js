@@ -32,7 +32,12 @@
  *  getFirstName(person);
  *  //> "Rachel"
  */
-function getFirstName(person) {}
+function getFirstName(person) {
+  // for(let key of person){
+    return person.names["first"]
+
+  // }
+}
 
 /**
  * getLastName()
@@ -45,7 +50,12 @@ function getFirstName(person) {}
  *  getLastName(person);
  *  //> "Rojas"
  */
-function getLastName(person) {}
+function getLastName(person) {
+  for(let key of person){
+    return person.names["last"]
+
+  }
+}
 
 /**
  * getAddressStreet()
@@ -58,7 +68,12 @@ function getLastName(person) {}
  *  getAddressStreet(person);
  *  //> "697 Pine Drive"
  */
-function getAddressStreet(person) {}
+function getAddressStreet(person) {
+  for(let element of person){
+    return person.address.street
+
+  }
+}
 
 /**
  * getCountOfPhoneNumbers()
@@ -71,7 +86,15 @@ function getAddressStreet(person) {}
  *  getCountOfPhoneNumbers(person);
  *  //> 2
  */
-function getCountOfPhoneNumbers(person) {}
+function getCountOfPhoneNumbers(person) {
+  // let phoneNums = 0;
+  // for(const key in person){
+  //   if[person]["numbers"] === true){
+  //     phoneNums++
+  //   }
+    return person.numbers.length
+  }
+
 
 /**
  * getFirstPhoneNumber()
@@ -87,12 +110,18 @@ function getCountOfPhoneNumbers(person) {}
  *  getFirstPhoneNumber(person);
  *  //> 7185550921
  */
-function getFirstPhoneNumber(person) {}
+
+  function getCountOfPhoneNumbers(person) {
+    // let phoneNums = 0;
+    for(const key in person){
+     return person.numbers[0]
+    }
+}
 
 /**
  * getLastPhoneNumber()
  * ---------------------
- * Return the first phone number associated with the person.
+ * Return the last phone number associated with the person.
  *
  * NOTE: There will always be at least one phone number.
  *
@@ -103,7 +132,11 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
+function getLastPhoneNumber(person) {
+  for(const key in person){
+    return person.numbers.length -1
+   }
+}
 
 /**
  * getFullName()
@@ -116,7 +149,19 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  // return `${person.names.first.middle.last}`
+return `${person.names.first} ${person.names.middle} ${person.names.last}` 
+
+  // // let eachName = ""
+  // let fullName = person.names;
+  // for(const name in person){
+  //   // eachName += fullName
+  //   if(fullName = "firstName" +)
+  //   }
+  //   return eachName
+   }
+
 
 /**
  * getCityAndState()
@@ -132,7 +177,11 @@ function getFullName(person) {}
  *  getCityAndState(person);
  *  //> "Staten Island, NY"
  */
-function getCityAndState(person) {}
+function getCityAndState(person) {
+  // if(person.address.city && person.address.state ){
+    return `${person.address.city} ${person.address.state}`
+  // }
+}
 
 /**
  * getFullAddress()
@@ -148,7 +197,14 @@ function getCityAndState(person) {}
  *  getFullAddress(person);
  *  //> "697 Pine Drive 2A, Staten Island, NY, 10306"
  */
-function getFullAddress(person) {}
+function getFullAddress(person) {
+  return `${person.address.street.unit.city.state.zip}`
+  //  const fullAddress = person [address].map(all => getFullAddress(all));
+
+  // if(person.address.street && person.address.unit && person.address.city && person.address.state && person.address.zip){
+  //   return `${person.address.street} ${person.address.unit} ${person.address.city} ${person.address.state} ${person.address.zip}`
+  // }
+}
 
 /**
  * getFlatObject()
@@ -170,8 +226,22 @@ function getFullAddress(person) {}
       zip: "10306",
       numbers: [7185550921, 7185558611],
     };
+
  */
-function getFlatObject(person) {}
+// function getFlatObject(person) {
+//   let newObject = {}
+//   for(const key in person){
+//     if(person.names.key && person.address.key){
+//        newObject += person[key] 
+//     }
+//   }
+//   return newObject
+// }
+
+function getFlatObject(person) {
+  //  newPersonObject = [person].names.address 
+  newPersonObject = [person].names.first.middle.address.street.unit.city.state.zip 
+}
 
 // Do not change the code below.
 module.exports = {

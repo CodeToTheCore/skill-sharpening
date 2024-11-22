@@ -24,7 +24,8 @@ function getLengthOfString(str) {
  *  //> 111
  */
 function convertToNumber(val) {
-  
+//  return val === Number;
+    return val.toNumber();
 }
 
 /**
@@ -40,7 +41,7 @@ function convertToNumber(val) {
  *  //> "99"
  */
 function convertToString(val) {
-
+    return val.toString()
 }
 
 /**
@@ -177,10 +178,10 @@ function isTruthy(val) {
  *  //> false
  */
 function isFalsy(val) {
-  if(val){
-    return false;
-  }else{
+  if(!val){
     return true;
+  }else{
+    return false;
   }
 }
 

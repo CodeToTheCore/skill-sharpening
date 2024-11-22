@@ -12,7 +12,14 @@
  *  shoutForLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForLoop(array) {}
+function shoutForLoop(array) {
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    array[i] += "!";// on lookup i seen typeof    if(typeof arr[i] === "str")
+    newArray.push(array[i])  // + "i" should be after arr[i]  not +=  plus cause we are adding not incrementing
+  }
+  return newArray;
+}
 
 /**
  * shoutWhileLoop()
@@ -28,7 +35,14 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let i = 0;
+  while(typeof array[i] === "string"){
+   array[i] + "i";
+  
+  }
+  i++
+}
 
 /**
  * shoutForOfLoop()
@@ -44,7 +58,14 @@ function shoutWhileLoop(array) {}
  *  shoutForOfLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutForOfLoop(array) {}
+function shoutForOfLoop(array) {
+  let newAr = [];
+  for(const arrays of array){
+    array.arrays + "!";
+    newAr.push(array)
+  }
+  return newAr
+}
 
 /**
  * sumArray()
@@ -57,7 +78,13 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let sum = 0;
+  for(let i = 0; i < array.length; i++){
+    sum += array[i];
+  }
+  return sum
+}
 
 /**
  * oddArray()
@@ -70,7 +97,12 @@ function sumArray(array) {}
  *  oddArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 11, 15, 37 ]
  */
-function oddArray(array) {}
+function oddArray(array) {
+  const oddIns = array.filter((values)=>{
+    return values % 2 !== 0
+  })
+  return oddIns
+}
 
 /**
  * evenArray()
@@ -83,7 +115,12 @@ function oddArray(array) {}
  *  evenArray([ 11, 15, 20, 22, 37 ]);
  *  //> [ 20, 22 ]
  */
-function evenArray(array) {}
+function evenArray(array) {
+  const evenIns = array.filter((values)=>{
+    return values % 2 === 0
+  })
+  return evenIns
+}
 
 /**
  * findSmallest()
@@ -96,7 +133,14 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  let smallestNum = [0];
+  for(let i = 0; i < array.length; i++){
+    if(array[i] < smallestNum){
+     smallest =  array[i] 
+    }
+  }
+}
 
 /**
  * findLargest()
@@ -109,7 +153,39 @@ function findSmallest(array) {}
  *  findLargest([ 0, 11, -2, 5 ]);
  *  //> 11
  */
-function findLargest(array) {}
+// function findLargest(array) {
+//    let largest = array[i][0];
+//    for(let i = 0; i < array.length; i++){
+//       //  largest > array[i]
+//     // thought about if statement at first but was confused 
+//       return largest
+//     }
+
+//    }
+//}
+
+function findLargest(array) {
+      let largest = array[i][0];
+     for(let i = 0; i < array.length; i++){
+     if(largest > array[i]){
+        largest = array[i]
+     }
+    }
+    return largest
+  
+   }
+  
+
+
+
+// function findLargest(array) {
+//   let largestNum = [0];
+//   for(let i = 0; i < array.length; i++){
+//     if(array[i] > largestNum){
+//       largestNum =  array[i] 
+//     }
+//   }
+// }
 
 /**
  * findEqual()
@@ -126,7 +202,15 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  for(let element of array){
+    if(array[element].includes(selected)){
+      return true
+    }else{
+      return false
+    }
+  }
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +227,25 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let dupArr2 = []
+  for(let i = 0; i < array.length; i++){
+   if(array[i] !== array[i]){
+    dupArr2.push(array[i]) 
+    return dupArr2
+   }else{
+    return -1
+   }
+   
+  }
+    
+  }
+   
+   
+  // const result = array.filter((nums)=>{// should filter use another param?
+  //   !nums * 2 
+  // })
+
 
 // Do not change any code below this line.
 module.exports = {
